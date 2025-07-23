@@ -1,0 +1,38 @@
+@import "@fontsource/inter/variable.css";
+body {
+  font-family: 'InterVariable', system-ui, sans-serif;
+  background: linear-gradient(135deg, #cfd9df, #e2ebf0 80%);
+  min-height: 100vh;
+  margin: 0;
+}
+.macos-window {
+  margin: 40px auto;
+  background: rgba(255,255,255,0.75);
+  box-shadow: 0 8px 40px 0 rgba(0,0,0,0.16), 0 1.5px 4px 0 rgba(0,0,0,0.08);
+  border-radius: 16px;
+  max-width: 480px;
+  padding: 40px 32px 32px 32px;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(24px);
+  animation: pop-in 0.8s cubic-bezier(.25,1.7,.5,1) both;
+}
+@keyframes pop-in {
+  0% { opacity: 0; transform: scale(0.92) translateY(32px);}
+  100% { opacity: 1; transform: scale(1) translateY(0);}
+}
+.macos-titlebar {
+  height: 32px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 10px;
+  margin-bottom: 18px;
+}
+.macos-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.macos-dot.red { background: #ff5f57; border: 1.5px solid #e0443e;}
+.macos-dot.yellow { background: #ffbd2e; border: 1.5px solid #dea123;}
+.macos-dot.green { background: #28c840; border: 1.5px solid #12a520;}
+@media (max-width: 600px) {
+  .macos-window { max-width: 98vw; padding: 16px 5vw; }
+}
